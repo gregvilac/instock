@@ -1,0 +1,105 @@
+@use "../../styles/partials/font-face";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.product {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+  }
+  &__header-left {
+    display: flex;
+    align-items: center;
+  }
+  &__back-arrow {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__edit-button {
+    border-radius: 50%;
+    border: none;
+    background-color: $button-color;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+    @include tablet {
+      height: 38px;
+      gap: 8px;
+      border-radius: 20px;
+      padding: 16px;
+    }
+  }
+  &__edit-icon {
+    filter: brightness(0) invert(1);
+  }
+
+  &__edit-text {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__name {
+    font-size: $mobile-page-header;
+    @include tablet {
+      font-size: $tablet-page-header;
+    }
+  }
+
+  &__details {
+    border-top: 1px solid $border-color;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 1.5rem;
+    @include tablet {
+      flex-direction: row;
+      gap: 32px;
+      padding: 32px;
+    }
+  }
+  &__label {
+    text-transform: uppercase;
+    color: $placeholder-color;
+    font-size: $mobile-label;
+    @include desktop {
+      font-size: $tablet-label;
+    }
+  }
+  &__body-text {
+    font-size: $mobile-body-medium;
+    @include tablet {
+      font-size: $tablet-body-medium;
+    }
+  }
+  &__availability {
+    display: flex;
+  }
+  &__details-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include tablet {
+      width: 100%;
+      justify-content: space-between;
+    }
+    &--border {
+      @include tablet {
+        border-right: 1px solid $border-color;
+        padding-right: 32px;
+      }
+    }
+  }
+
+  &__innertext-availability {
+    width: 50%;
+  }
+}

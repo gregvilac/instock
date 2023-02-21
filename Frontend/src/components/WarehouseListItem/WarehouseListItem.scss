@@ -1,0 +1,143 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.Warehouse {
+    &:hover {
+        background-color: rgba(46, 102, 230, 0.07);
+    }
+    &__list-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: .0625rem solid $border-color;
+        font-size: $mobile-table-header;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        z-index: 1;
+        @include tablet {
+            flex-direction: row;
+            font-size: $tablet-table-header;
+            padding: 1rem 2rem 1rem 2rem;
+        }
+    }
+    &__main-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__sub-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding-top: 1rem;
+        @include tablet {
+            flex-direction: row;
+            padding-top: 0;
+            min-width: 20vw;
+        }
+        @include desktop {
+            min-width: 33vw;
+        }
+        &--left {
+            padding-right: 1rem;
+            @include tablet {
+                padding-right: 0;
+            }
+        }
+    }
+    &__info-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+    &__warehouse-subtitle {
+        color: $placeholder-color;
+        font-weight: 600;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__location {
+        font-size: $mobile-body-medium;
+        display: flex;
+        align-items: center;
+        color: $button-color;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+        @include tablet {
+            min-width: 15vw;
+        }
+    }
+    &__address-subtitle {
+        color: $placeholder-color;
+        font-weight: 600;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__address {
+        font-size: $mobile-body-medium;
+        @include tablet {
+            min-width: 13vw;
+            max-width: 10vw;
+        }
+        @include desktop {
+            min-width: 22vw;
+        }
+    }
+    &__name-subtitle {
+        color: $placeholder-color;
+        font-weight: 600;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__name {
+        font-size: $mobile-body-medium;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        @include tablet {
+            min-width: 14.5vw;
+        }
+    }
+    &__contact-subtitle {
+        color: $placeholder-color;
+        font-weight: 600;
+        @include tablet {
+            display: none;
+        }
+    }
+    &__contact-container {
+        @include tablet {
+            min-width: 20vw;
+            margin-left: 1rem;
+        }
+        @include desktop {
+            min-width: 15vw;
+        }
+    }
+    &__phone {
+        font-size: $mobile-body-medium;
+    }
+    &__email {
+        font-size: $mobile-body-medium;
+    }
+    &__actions-container {
+        display: flex;
+        justify-content: space-between;
+        @include tablet {
+            min-width: 15vw;
+            justify-content: flex-end;
+            margin-left: 2rem;
+        }
+        @include desktop {
+            min-width: 1vw;
+        }
+    }
+    &__edit-img {
+        margin-left: 3vw;
+    }
+}

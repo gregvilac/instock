@@ -1,0 +1,128 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__main-container {
+        position: fixed;
+        background: white;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem 1rem 1rem 1rem;
+        font-size: $mobile-body-large;
+        @include tablet {
+            width: 86vw;
+            height: 16.375rem;
+            top: 27%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @include desktop {
+            width: 55vw;
+        }
+    }
+    &--visible {
+        display: block;
+        position: fixed;
+        flex: 1;
+    }
+    &--hidden {
+        display: none;
+    }
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__close {
+        width: 100%;
+    }
+    &__question {
+        font-size: $mobile-page-header;
+        line-height: 2.25rem;
+        font-weight: 600;
+        @include tablet {
+            padding: 0 3rem 0 3rem;
+            font-size: $tablet-page-header;
+        }
+    }
+    &__confirm {
+        font-size: $mobile-body-large;
+        line-height: 1.625rem;
+        margin-top: 1rem;
+        @include tablet {
+            padding: 0 3rem 0 3rem;
+            font-size: $tablet-body-large;
+        }
+    }
+    &__button-container {
+        position: fixed;
+        display: flex;
+        bottom: 1.5rem;
+        left: 1rem;
+        right: 1rem;
+        max-width: inherit;
+        justify-content: space-evenly;
+        font-size: $mobile-label;
+        font-weight: 600;
+        @include tablet {
+            padding-right: 4rem;
+            justify-content: flex-end;
+            font-size: $tablet-label;
+        }
+    }
+    &__cancel-button {
+        display: flex;
+        width: 40vw;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        border: 1px solid $border-color;
+        color: $placeholder-color;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            color: $button-color;
+            border: 1px solid $button-color;
+        }
+        @include tablet {
+            width: 15vw;
+        }
+        @include desktop {
+            width: 6vw;
+        }
+    }
+    &__delete-button {
+        display: flex;
+        width: 40vw;
+        height: 2.25rem;
+        background-color: $error-color;
+        color: white;
+        border-radius: 1.25rem;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: $header-background-color;
+        }
+        @include tablet {
+            width: 15vw;
+            margin-left: 1rem;
+        }
+        @include desktop {
+            width: 6vw;
+        }
+    }
+}

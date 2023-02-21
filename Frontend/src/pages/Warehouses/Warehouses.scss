@@ -1,0 +1,132 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.Warehouses {
+    &__header-container {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: .0625rem solid $border-color;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2rem 2rem 0 2rem;
+        }
+    }
+    &__header-title {
+        font-size: $mobile-page-header;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        @include tablet {
+            font-size: $tablet-page-header;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__actions-container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            width: 45vw;
+            justify-content: flex-end;
+        }
+    }
+    &__search {
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        border: 1px solid $border-color;
+        background-image: url(../../assets/icon/search-24px.svg);
+        background-repeat: no-repeat;
+        padding: 1rem;
+        background-position: 95% 50%;
+        background-size: 1.0938rem 1.0938rem;
+        font-size: $mobile-body-medium;
+        margin-bottom: 1rem;
+        &:focus {
+            outline: 1px solid $button-color;
+        }
+        @include tablet {
+            height: 2.375rem;
+            width: 50%;
+        }
+    }
+    &__button {
+        background-color: $button-color;
+        color: white;
+        border-radius: 1.25rem;
+        align-items: center;
+        padding: 0.5rem;
+        font-size: $mobile-label;
+        text-align: center;
+        font-weight: 600;
+        &:hover {
+            background-color: $header-background-color;
+        }
+        @include tablet {
+            height: 2.375rem;
+            width: 10.5rem;
+            margin: 0 0 1rem 1rem;
+        }
+    }
+}
+
+.sort {
+    display: none;
+    @include tablet {
+        padding: .6875rem 2rem .6875rem 2rem;
+        display: flex;
+        color: $placeholder-color;
+        font-size: $tablet-table-header;
+        font-weight: 600;
+        background-color: $secondary-background-color;
+        align-items: center;
+        &__warehouse-container {
+            display: flex;
+            align-items: center;
+            min-width: 15vw;
+        }
+        &__address-container {
+            display: flex;
+            align-items: center;
+            min-width: 17vw;
+            @include desktop {
+                min-width: 20vw;
+            }
+        }
+        &__name-container {
+            display: flex;
+            align-items: center;
+            min-width: 16.5vw;
+            @include desktop {
+                min-width: 15vw;
+            }
+        }
+        &__info-container {
+            display: flex;
+            align-items: center;
+            min-width: 20vw;
+            @include desktop {
+                min-width: 15vw;
+            }
+        }
+        &__actions-container {
+            display: flex;
+            align-items: center;
+            min-width: 10vw;
+            justify-content: flex-end;
+            margin-left: 1rem;
+            @include desktop {
+                min-width: 8vw;
+                margin-right: 5rem;
+            }
+        }
+        &__img {
+            height: .75rem;
+        }
+    }
+}

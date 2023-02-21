@@ -1,0 +1,22 @@
+{
+  "name": "instock_with_dbs-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "start": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.0",
+    "knex": "^2.0.0",
+    "mysql": "^2.18.1",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,152 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+.edit-inventory {
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 10px;
+    border-bottom: 1px solid $border-color;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__container {
+    @include tablet {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  &__details-form {
+    padding: 0 24px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $border-color;
+    margin: 16px 0;
+    @include tablet {
+      width: 100%;
+      border-bottom: none;
+      border-right: 1px solid $border-color;
+      margin: 24px 0;
+    }
+  }
+  &__subtitle {
+    padding-bottom: 24px;
+  }
+  &__textarea {
+    height: 7rem;
+    resize: none;
+    width: 100%;
+    padding: 1rem 0 0 1rem;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    border: 1px solid $border-color;
+    font-size: $mobile-body-medium;
+    line-height: 20px;
+    &:focus{
+      outline:none;
+      border: solid 1px $button-color;
+    }
+    &--error {
+      border: 1px solid $error-color;
+    }
+  }
+  &__availability-form {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0 0 0;
+    @include tablet {
+      width: 100%;
+      border-bottom: none;
+      margin: 24px 0;
+    }
+  }
+  &__label {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: $mobile-label;
+    line-height: 20px;
+    @include tablet {
+      font-size: $tablet-label;
+      line-height: 22px;
+    }
+  }
+  &__radio {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6rem;
+    margin-bottom: 16px;
+    @include tablet {
+      gap: 3rem;
+    }
+  }
+  &__radio-option>input {
+    margin: 0 8px 0 0;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    background-color: $secondary-background-color;
+    padding: 16px 24px;
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+  &__error {
+    color: $error-color;
+    background: url(../../assets/icon/error-24px.svg);
+    background-repeat: no-repeat;
+    background-position: 1;
+    padding-left: 2rem;
+    font-size: $tablet-body-medium;
+  }
+  &__success {
+    padding: 16px;
+    background-color: $instock-label;
+    color: $global-background;
+    font-size: $tablet-body-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__qty {
+    display: flex;
+    flex-direction: column;
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+.form-field {
+  &:focus{
+    outline:none;
+    border: solid 1px $button-color;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

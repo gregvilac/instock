@@ -1,0 +1,165 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.add-inventory{
+  width: 100%;
+
+  &__svg {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  
+  &__title{
+    padding: 1rem;
+    width: 80%;
+    font-size: $tablet-page-header;
+    
+    &-wrapper{
+      display: flex;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  &__container{
+    @include tablet{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      margin: 1rem 0;
+    }
+  }
+
+  &__details-form{
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+
+    @include tablet {
+      width: 50%;
+      border-bottom: none;
+      border-right: 1px solid $border-color;
+      padding: 1.5rem;
+    }
+  }
+
+  &__subtitle-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-field{
+    border-radius: 20px;
+    border: 1px solid $border-color;
+    padding: .5rem;
+    margin: .5rem 0;
+    resize: none;
+    &--invalid {
+      outline: 1px $error-color solid;
+    }
+    &:focus{
+      outline:none;
+      border: solid 1px $button-color;
+    }
+  }
+
+  &__form-validate {    
+    font-size: 11px;
+    line-height: 11px;
+    display: flex;
+    margin-top: .25rem;
+
+    &--hide{
+      display: none;
+    }
+  }
+
+  &__qty{
+    display: flex;
+    flex-direction: column;
+
+    &--hidden{
+      display: none;
+    }
+  }
+
+  &__availability-form{
+    padding: 1rem;
+
+    @include tablet {
+      width: 50%;
+      padding: 1.5rem;
+    }
+  }
+
+  &__subtitle{
+    padding-bottom: 1rem;
+  }
+
+  &__radio{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    padding-bottom: 1rem;
+
+    @include tablet{
+      width: 80%;
+    }
+  }
+
+  &__p1{
+    padding: .5rem;
+
+  }
+
+  &__p2{
+    padding: .5rem;
+  }
+
+  &__availability-details{
+    display: flex;
+    flex-direction: column;
+  }
+
+ &__buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: $secondary-background-color;
+  padding: 1rem;
+  gap: 1rem;
+
+  @include tablet{
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+ }
+
+ &__cancel-btn{
+  width: 45%;
+  padding: .5rem;
+  border-radius: 20px;
+  border: none;
+
+  @include tablet{
+    width: 10%;
+    margin-right: 1rem;
+  }
+ }
+
+ &__submit-btn{
+  width: 45%;
+  padding: .5rem;
+  border-radius: 20px;
+  border: none;
+  background-color: $button-color;
+  color: $global-background;
+  @include tablet {
+    width: 15%;
+  }
+ }
+}
+
+.errorImg{
+  height: 14px;
+  padding: 0 4px 0 0;
+}

@@ -1,0 +1,19 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.footer {
+
+  &__text {
+    color: $placeholder-color;
+    background-color: $secondary-background-color;
+    font-size: $mobile-body-small;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+    @include tablet {
+      font-size: $tablet-body-small;
+    }
+  }
+  
+}

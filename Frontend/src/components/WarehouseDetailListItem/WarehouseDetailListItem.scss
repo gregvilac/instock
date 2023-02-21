@@ -1,0 +1,118 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+
+.inventorylist__item {
+    display: none;
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-block: 1.125rem;
+        padding-inline: 2rem;
+        > *{
+            width: calc(100%/5)
+        }
+        border-bottom: 1px $border-color solid;
+        p {
+            font-size: .875rem;
+        }
+    }
+    &:hover {
+        @include desktop {
+            background-color: #2E66E512;
+        
+    }}
+    &--action {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    &--link {
+        color: $button-color;
+        display: flex;
+        align-items: center;
+        p {font-weight: 600;}
+        font-size: 14px;
+    }
+    &--mobile {
+        display: flex;
+        flex-direction: column;
+        padding-block: 1rem;
+        border-top: 1px $border-color solid;
+        padding-inline: 1.5rem;
+        p {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1rem;
+        }
+        &--link {
+            color: $button-color;
+            display: flex;
+            align-items: center;
+            p {font-weight: 600;}
+        }
+        &--label {
+            text-transform: uppercase;
+            color: $placeholder-color;
+            font-size: 11px;
+            line-height: 20px;
+        }
+        @include tablet {
+            display: none;
+        }
+        &--top {
+            display: flex;
+            flex-direction: row;
+            > * {
+                width: 50%;
+            }
+            &--left {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            &--right {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        &--bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+.status__tag {
+    padding-inline: .5rem;
+    border-radius: 20px;
+    height: 24px;
+    width: fit-content;
+    text-transform: uppercase;
+    user-select: none;
+    p{
+        font-size: 11px;
+}
+    display: flex;
+    align-items: center;
+    &--instock {
+        @extend .status__tag;
+        background-color: $instock-label-background;
+        color: $instock-label;
+    }
+    &--outofstock{
+        @extend .status__tag;
+        background-color: $error-color-background;
+        color: $error-color;
+    }
+    @include tablet {
+        height: 26px;
+        p{font-size: 12px;}
+    }
+}
